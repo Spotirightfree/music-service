@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["music-service.csproj", "music-service/"]
 RUN dotnet restore "music-service/music-service.csproj"
-COPY . music-service
-WORKDIR "/src/music-service"
+COPY . music-service/music-service
+WORKDIR "/src/music-service/music-service"
 RUN dotnet build "music-service.csproj" -c Release -o /app/build
 
 FROM build AS publish
