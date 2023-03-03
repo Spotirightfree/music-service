@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore music-service/
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build music-service/ --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test music-service/ --no-build --verbosity normal
