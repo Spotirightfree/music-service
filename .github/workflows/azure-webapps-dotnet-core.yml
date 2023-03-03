@@ -56,7 +56,7 @@ jobs:
         run: dotnet build ./music-service --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/music-service
+        run: dotnet publish ./music-service -c Release -o ${{env.DOTNET_ROOT}}/music-service
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
