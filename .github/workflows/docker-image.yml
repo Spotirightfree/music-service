@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-            repository: music-service/
+            repository: BillyKuiper/music-service/music-service
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag music-service:$(date +%s)
       
