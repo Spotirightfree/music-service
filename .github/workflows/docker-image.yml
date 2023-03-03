@@ -14,10 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-            repository: BillyKuiper/music-service/music-service
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag music-service:$(date +%s)
+      run: docker build . --file ./music-service/Dockerfile --tag music-service:$(date +%s)
       
   push_to_registry:
     name: Push Docker image to Docker Hub
