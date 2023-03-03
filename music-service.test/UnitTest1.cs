@@ -10,7 +10,7 @@ namespace music_service.test
         {
             WeatherForecastController weather = new WeatherForecastController(null);
             var result = weather.Get();
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(result); 
         }
     }
 }
