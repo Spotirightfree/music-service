@@ -2,15 +2,14 @@ using music_service.Controllers;
 
 namespace music_service.test
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Fact]
+        public void WeatherForecastTest()
         {
-            WeatherForecastController weather = new WeatherForecastController(null);
-            var result = weather.Get();
-            Assert.IsNotNull(result); 
+            WeatherForecastController wc = new WeatherForecastController(null);
+            var results = wc.Get();
+            Assert.NotNull(results);
         }
     }
 }
