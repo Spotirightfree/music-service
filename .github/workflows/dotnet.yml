@@ -25,7 +25,7 @@ jobs:
     - name: Build project
       run: dotnet build music-service/ --no-restore
     - name: Test
-      run: dotnet test music-service.test/ --verbosity normal
+      run: dotnet test music-service.test/ --verbosity normal --logger "trx;LogFileName=test-results.trx" || true
     - name: Test Report
       uses: dorny/test-reporter@v1
       if: always()
