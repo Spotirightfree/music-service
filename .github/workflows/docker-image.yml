@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./music-service -f ./music-service/music-service/Dockerfile --tag music-service:$(date +%s)
+      run: docker build . -f ./music-service/music-service/Dockerfile --tag music-service:$(date +%s)
       
   push_to_registry:
     name: Push Docker image to Docker Hub
