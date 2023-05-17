@@ -21,13 +21,13 @@ namespace music_service.Services
             await Task.Run(() =>
             {
                 var factory = new ConnectionFactory { HostName = "192.168.240.6" };
-                factory.UserName = "playlist-service";
-                factory.Password = "playlist-service";
+                factory.UserName = "main-service";
+                factory.Password = "main-service";
                 using var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
 
-                channel.QueueDeclare(queue: "music-service-queue",
-                                     durable: false,
+                channel.QueueDeclare(queue: "EventBus",
+                                     durable: true,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
@@ -41,7 +41,7 @@ namespace music_service.Services
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine($" [x] Received {message}");
                 };
-                channel.BasicConsume(queue: "music-service-queue",
+                channel.BasicConsume(queue: "EventBus",
                                      autoAck: true,
                                      consumer: consumer);
 
