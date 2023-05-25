@@ -1,0 +1,1 @@
+SELECT JSON_VALUE([Error].[Values], '$.LogLevel') AS LogLevel, JSON_VALUE([Error].[Values], '$.ThreadId') AS ThreadId, Created from [dbo].[Error]

@@ -58,5 +58,12 @@ namespace music_service.Controllers
         {
             return "Hello World from Music-Service";
         }
+
+        [HttpGet]
+        [Route("Crach_Test")]
+        public string CrashTest()
+        {
+            throw new Exception("MEGA CRASH~!");
+        }
     }
 }
